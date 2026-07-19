@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobs Near You — County Jobs by Industry</title>
+<meta name="description" content="Search workplace jobs by county and industry. See what drives each county's employment — from manufacturing and healthcare to retail and professional services. Census LODES data.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Jobs Near You</h1>
+    <p class="subtitle">Workplace jobs by county and industry · Census LEHD Origin-Destination Employment Statistics (LODES)</p>
+</header>
+
+<nav class="tabs">
+    <button class="tab active" data-tab="name">By Name</button>
+    <button class="tab" data-tab="state">By State</button>
+    <button class="tab" data-tab="nearby">Near Me</button>
+</nav>
+
+<main>
+  <div class="search-container">
+    <!-- Name Search -->
+    <section id="name-search" class="search-panel active">
+        <input type="text" id="search-input" placeholder="Enter a county name..." autocomplete="off">
+        <div id="search-results" class="results-list"></div>
+    </section>
+
+    <!-- State Browse -->
+    <section id="state-search" class="search-panel">
+        <select id="state-select">
+            <option value="">Select a state...</option>
+        </select>
+        <div id="state-results" class="results-list"></div>
+    </section>
+
+    <!-- Nearby Search -->
+    <section id="nearby-search" class="search-panel">
+        <div class="nearby-inputs">
+            <input type="text" id="addr-input" placeholder="Enter an address or zip code...">
+            <select id="radius-select"></select>
+            <button id="nearby-btn">Search</button>
+        </div>
+        <div id="nearby-results" class="results-list"></div>
+    </section>
+
+    <!-- Intro -->
+    <div id="intro">
+        <div id="intro-stats"></div>
+    </div>
+  </div>
+
+  <!-- County Detail -->
+  <div id="detail-panel" style="display:none;"></div>
+</main>
+
+<footer id="about">
+    <p>Data: <a href="https://lehd.ces.census.gov/data/lodes/LODES8/">Census LEHD Origin-Destination Employment Statistics (LODES 8.4)</a>. Workplace Area Characteristics — jobs by work location, not residence. This is public employment data. <a href="https://github.com/GreatTombProductions/jobs-near-you">Source on GitHub</a>.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
